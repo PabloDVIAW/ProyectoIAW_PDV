@@ -23,7 +23,7 @@
     <main>
         <h2>Estos son los avistamientos registrados</h2>
         <!-- tabla de los avistamientos recientes -->
-
+        
         <table>
 				<thead>
 					<tr>
@@ -43,6 +43,8 @@
 							echo "<td>$fila[nom_mon]</td>";
 							echo "<td>$fila[zona]</td>";
 							echo "<td>$fila[fecha]</td>";
+							echo "<td><a href='editar.php?id=$fila[id]&' class='btn btn-warning' >Editar</a></td>";
+							echo "<td><a href='eliminar.php?id=$fila[id]' class='btn btn-danger' >Eliminar</a></td>";
 							echo "</tr>";
 						}
 
