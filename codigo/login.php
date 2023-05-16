@@ -15,7 +15,7 @@
     <form action="login2.php" method="GET">
         <h2>Por favor, identifiquese</h2>
         <p><label>Nombre: <input type="text" name="nombre"></label></p>
-        <p><label>Contraeña: <input type="text" name="contraseña"></label></p>
+        <p><label>Contraeña: <input type="password" name="contraseña"></label></p>
         <p><label for=""><input type="submit" name="entrar"></label></p>
     </form>
         <!-- Un formulario de que tipo de usuario va a entrar y reenviar a un tipo y otro de index -->
