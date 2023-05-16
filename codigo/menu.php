@@ -1,5 +1,14 @@
+<?php
+
+	require('conexion.php');
+	$sql="SELECT * FROM avistamientos";
+	$resultado=$mysqli->query($sql)
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +23,33 @@
     <main>
         <h2>Estos son los avistamientos registrados</h2>
         <!-- tabla de los avistamientos recientes -->
-        <!-- la tabla dispondrá de 4 campos: nombre de la criatura, lugar de avistamiento, hora del registro y una entrada a informacion de la criatura -->
+        
+        <table>
+				<thead>
+					<tr>
+						<th>Nombre Monstruo</th>
+						<th>Zona</th>
+						<th>Fecha ocurrida</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+
+						 while($fila = $resultado->fetch_assoc()){
+							
+							echo "<tr>";
+							echo "<td>$fila[nom_mon]</td>";
+							echo "<td>$fila[zona]</td>";
+							echo "<td>$fila[fecha]</td>";
+							echo "</tr>";
+						}
+
+					?>
+				</tbody>
+			</table>
+        <!-- la tabla dispondrá de 3 campos: nombre de la criatura, lugar de avistamiento y hora del registro-->
         <!-- el fonbdo constará de un estampado de escamas verdes -->
 
 
