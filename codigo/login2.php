@@ -43,3 +43,5 @@ $resultado2 = $mysqli->query($verif2);
         }
     }
 ?>  
+
+<!-- Queda poner si entra en menuadmin o si no mediante un else viendo si el $nom es Administrador o no -->
