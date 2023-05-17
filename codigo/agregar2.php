@@ -14,5 +14,6 @@ $sql = "INSERT INTO `avistamientos` (`id`, `nom_mon`, `zona`, `fecha`) VALUES (N
         echo "<p><a href='index.php'>Regresar</a></p>";
     }
 
+// mirar para que cazador no entre en menu admin si da a agregar
 
 ?>
