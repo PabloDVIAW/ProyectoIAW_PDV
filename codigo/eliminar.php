@@ -15,11 +15,11 @@
 	<?php
     require "conexion.php";
     $id=$_GET['id'];
-    $sql="DELETE FROM avistamiento where ID=$id";
+    $sql="DELETE FROM avistamientos where ID=$id";
     $resultado=$mysqli->query($sql);
     if($resultado>0){
         echo "<br><p class='alert alert-primary'>REGISTRO ELIMINADO</p>";
-		echo "<a href='index.php' class='btn btn-primary'>Regresar</a>";
+		echo "<a href='login.php'>Regresar</a>";
     } else {
         echo "Error al eliminar";
         echo "";
