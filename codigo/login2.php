@@ -18,22 +18,22 @@ $nom='';
     while($fila = $resultado2->fetch_assoc()){
         $nom=$fila['nombre'];
     }
-
     if ($nombre==$nom && $contraseña==$contra){
-        if ($nombre=="Administrador"){
+        if($nom=="Administrador"){
+            if ($contraseña==$contra) {
                 header('Location: menuadmin.php');
-        }else{
+            }
+        } else{
+            if ($contraseña==$contra) {
                 header('Location: menu.php');
+            }
         }
     }else{
-        
         echo '<script language="javascript">alert("Datos de inicio incorrectos");</script>';
-                echo "Vaya, parece que hemos tenido un pequeño problema, pero no se preocupe que no es nada malo"
-                ?>
-                <br><a href="login.php">Volver a intentarlo</a>
-                <?php
-
+        echo "Vaya, parece que hemos tenido un pequeño problema, pero no se preocupe que no es nada malo"
+        ?>
+        <br><a href="login.php">Volver a intentarlo</a>
+        <?php
     }
+    
 ?>  
-
-<!-- Queda poner si entra en menuadmin o si no mediante un else viendo si el $nom es Administrador o no -->
