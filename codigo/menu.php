@@ -52,7 +52,7 @@
 
 			<div>
 				<!-- Registrar -->
-				<p><a href="agregar.php" name="btn">Registrar</a></p>
+				<p><a href="agregar.php" name="btn">Agregar</a></p>
 			</div>
         <!-- la tabla dispondrá de 3 campos: nombre de la criatura, lugar de avistamiento y hora del registro-->
         <!-- el fonbdo constará de un estampado de escamas verdes -->
