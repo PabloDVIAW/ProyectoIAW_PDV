@@ -19,7 +19,7 @@
     $resultado=$mysqli->query($sql);
     if($resultado>0){
         echo "<br><p class='alert alert-primary'>REGISTRO ELIMINADO</p>";
-		echo "<a href='login.php'>Regresar</a>";
+		echo "<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>";
     } else {
         echo "Error al eliminar";
         echo "";
