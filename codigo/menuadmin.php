@@ -56,6 +56,7 @@
 				<!-- Registrar -->
 				<p><a href="agregar.php" name="btn">Agregar</a></p>
 				<p><a href="login.php" name="btn">Volver</a></p>
+				<p><a href="tipos.php" name="btn">Ver la tabla informativa</a></p>
 			</div>
         <!-- la tabla dispondrá de 3 campos: nombre de la criatura, lugar de avistamiento y hora del registro-->
         <!-- el fonbdo constará de un estampado de escamas verdes -->

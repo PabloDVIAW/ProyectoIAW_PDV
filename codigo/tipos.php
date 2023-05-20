@@ -51,7 +51,8 @@
 				</tbody>
 			</table>
 
-    </main>
+            <a href="javascript: history.go(-1)">Volver</a>
+            </main>
     <footer>
     </footer>
 </body>
