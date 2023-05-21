@@ -13,7 +13,7 @@
 							<label><p>Elige un lugar porfavor</p>
 							<select name="zona" id="" >
 								<option value="Templo_Olvidado">Templo_Olvidado</option>
-								<option value="Islas_Heladas">Islas_Heladas</option>
+								<option selected value="Islas_Heladas">Islas_Heladas</option>
 								<option value="Bosque_Inundado">Bosque_Inundado</option>
 								<option value="Llanos_Arenosos">Llanos_Arenosos</option>
 								<option value="Grutas_Lava">Grutas_Lava</option>
