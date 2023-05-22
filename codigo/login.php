@@ -25,15 +25,20 @@
         <p><label>Contraeña <input type="password" name="contraseña" class="form-control"></label></p>
         <small class="form-text text-muted">Recuerda que debe ser Cazador, solo si eres cazador pero la de Administrador no te la podemos decir</small>
         </div>
-        <button type="submit" class="btn btn-warning">Submit</button>
+        <button type="submit" class="btn btn-warning">Entrar</button>
+        <a href="index.php"> <button type="button" class="btn btn-primary">¡Salir!</button></a>
     </form>
         <!-- Un formulario de que tipo de usuario va a entrar y reenviar a un tipo y otro de index -->
         <!-- pedira datos sea admin o usuario pero con igf que redirige según el rol -->
     </div>
     </main>
-    <footer>
-
+    <footer class="card text-center fixed-bottom" style="background-color: lightblue;">
+    <section class="buttons">
+      
+    </section>
     </footer>
 </div>
 </body>
+<footer>
+</footer>
 </html>
