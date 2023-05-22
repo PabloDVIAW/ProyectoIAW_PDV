@@ -18,8 +18,13 @@
     $sql="DELETE FROM avistamientos where ID=$id";
     $resultado=$mysqli->query($sql);
     if($resultado>0){
-        echo "<br><p class='alert alert-primary'>REGISTRO ELIMINADO</p>";
-		echo "<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>";
+        ?>
+		<div class="alert alert-success container" role="alert">
+			<br><h4 class="alert-heading">REGISTRO Eliminado</h4>
+			<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
+		</div>
+		
+		<?php
     } else {
         echo "Error al eliminar";
         echo "";

@@ -31,10 +31,8 @@
         <!-- pedira datos sea admin o usuario pero con igf que redirige según el rol -->
     </div>
     </main>
-    
-       
-
     <footer>
+        
     </footer>
 </div>
 </body>
