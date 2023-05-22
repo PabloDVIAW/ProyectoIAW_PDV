@@ -6,28 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestiario Online</title>
 </head>
-<body>
+<body style="background-image: url('../imagenes/fondogremio.jpg');" >
+<div class="container">
     <header>
-        <!-- Será similar en todas las páginas pero con el titulo cambiado a la tematica del archivo -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </header>
     
     <main>
+    <div>
     <form action="login2.php" method="GET">
         <h2>Por favor, identifiquese</h2>
-        <p><label>Nombre: <input type="text" name="nombre"></label></p>
-        <p><label>Contraeña: <input type="password" name="contraseña"></label></p>
-        
-        <p><label for=""><input type="submit" name="entrar"></label></p>
+        <div class="form-group" >
+            <p><label>Nombre <input type="text" name="nombre" class="form-control"></label></p>
+            <small class="form-text text-muted">Recuerda que debe ser Administrador o Cazador</small>
+        </div>
+        <div class="form-group">
+        <p><label>Contraeña <input type="password" name="contraseña" class="form-control"></label></p>
+        <small class="form-text text-muted">Recuerda que debe ser Cazador, solo si eres cazador pero la de Administrador no te la podemos decir</small>
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
     </form>
         <!-- Un formulario de que tipo de usuario va a entrar y reenviar a un tipo y otro de index -->
         <!-- pedira datos sea admin o usuario pero con igf que redirige según el rol -->
-
+    </div>
     </main>
     
        
 
     <footer>
-    <!-- mismo footer en todas las páginas -->
     </footer>
+</div>
 </body>
 </html>
