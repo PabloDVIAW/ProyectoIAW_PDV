@@ -25,8 +25,12 @@
 	$resultado = $mysqli->query($sql);
 
 	if ($resultado > 0) {
-		echo "<br><p class='alert alert-primary'>REGISTRO MODIFICADO</p>";
-		echo "<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>";
+		?>
+		<body style="background-image: url('../imagenes/fondogremio.jpg');">
+		<br><p class='alert alert-primary'>REGISTRO MODIFICADO</p>;
+		<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>;
+		</body>
+		<?php
 	} else {
 		echo "<p>ERROR al editar registro</p>";
 		echo "<p><a href='menuadmin.php'>Regresar</a></p>";

@@ -18,9 +18,13 @@
     $sql="DELETE FROM avistamientos where ID=$id";
     $resultado=$mysqli->query($sql);
     if($resultado>0){
-        echo "<br><p class='alert alert-primary'>REGISTRO ELIMINADO</p>";
-		echo "<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>";
-    } else {
+		?>
+		<body style="background-image: url('../imagenes/fondogremio.jpg');">
+        <br><p class='alert alert-primary'>REGISTRO ELIMINADO</p>;
+		<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>;
+		</body>
+		<?php
+	} else {
         echo "Error al eliminar";
         echo "";
     }
