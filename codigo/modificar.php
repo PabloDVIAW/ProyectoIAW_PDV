@@ -34,8 +34,6 @@
 							<br>
 							<label><p>Elige un lugar para cambiar</p>
 							
-                            <p>Categoría</p>
-							
 							<?php if($zona=='Templo_Olvidado'){
 							
 							echo "<select name='categoria' value='<?php echo $zona ?>' id='' >";
