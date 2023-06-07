@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
-		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="../estilos/micss.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		
 		<title>Bestiario Online</title>
@@ -25,11 +25,12 @@ $sql = "INSERT INTO `avistamientos` (`id`, `nom_mon`, `zona`, `fecha`) VALUES (N
 	$resultado = $mysqli->query($sql);
     if($resultado>0){
         ?>
-		<div class="alert alert-success container" role="alert">
+		<body>
+			<div class="alert alert-success container" role="alert">
 			<br><h4 class="alert-heading">REGISTRO AGREGADO</h4>
 			<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
 		</div>
-		
+		</body>
 		<?php
     }else{
         echo "<p>ERROR al insertar registro</p>";

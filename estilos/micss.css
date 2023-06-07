@@ -1,15 +1,36 @@
+  body {
+    background-image: url('../imagenes/frondogrem.jpg');
+  }
+  
   @media (max-width: 1000px) {
     body {
       font-size: 50px;
       padding: 10px;
-      align-items: center;
-      background-image: url('../imagenes/fondogremio.jpg');
+      align-content: center;
+      background-image: url('../imagenes/fondotablet.jpg');
+      flex-direction: row;
     }
 
     .box {
+      padding: 10px;
+      display: flex;
+    }
+    .menucab{
+        visibility: hidden;
+    }
+    
+  }
+
+  @media (max-width: 650px) {
+    body {
+      font-size: 50px;
+      padding: 10px;
+      align-items: center;
+      background-image: url('../imagenes/movilfondo.jpg');
+    }
+    .box {
       padding: 1px;
       display: flex;
-      background-image: url(https://p4.wallpaperbetter.com/wallpaper/439/553/103/minimalist-minimal-art-fox-night-wallpaper-preview.jpg);
     }
     .menucab{
         visibility: hidden;
