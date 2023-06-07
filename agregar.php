@@ -14,7 +14,6 @@
 				<h1>Lugares donde lo pudiste encontrar</h1>
 						<form action="agregar2.php" method="GET">
 							<label for=""><p>Nombre del monstruo: <input type="text" name="nombre"></p></label>
-							<!-- Categoría -->
 							<br>
 							<label><p>Elige un lugar porfavor</p>
 							<select name="zona" id="" >
