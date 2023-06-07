@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestiario Online</title>
 </head>
-<body style="background-image: url('../imagenes/fondogremio.jpg');">
+<body>
 <div class="container">
     <header>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -28,8 +28,6 @@
         <button type="submit" class="btn btn-warning">Entrar</button>
         <a href="index.php"> <button type="button" class="btn btn-primary">¡Salir!</button></a>
     </form>
-        <!-- Un formulario de que tipo de usuario va a entrar y reenviar a un tipo y otro de index -->
-        <!-- pedira datos sea admin o usuario pero con igf que redirige según el rol -->
     </div>
     </main>
     <footer class="card text-center fixed-bottom" style="background-color: lightblue;">
