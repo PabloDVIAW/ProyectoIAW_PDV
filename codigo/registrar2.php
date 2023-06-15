@@ -1,3 +1,11 @@
+<?php
+
+	require('conexion.php');
+	$sql="SELECT * FROM usuarios";
+	$resultado=$mysqli->query($sql);
+	
+?>
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -13,29 +21,45 @@
 	</head>
 <body>
     <?php
-require 'conexion.php';
+require('conexion.php');	
 $nombre=$_GET['nombre'];
 $contra=$_GET['contra'];
 $contraseña = $_GET['contra'];
     $contraseña_segura= password_hash($contra, PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO `usuarios` (`id`, `tipo_user`, `usuario`, `contra`) VALUES (NULL, 'cazador', '$nombre', '$contraseña_segura');";
-	$resultado = $mysqli->query($sql);
-    if($resultado>0){
-        ?>
-		<body>
-			<div class="alert alert-success container" role="alert">
-			<br><h4 class="alert-heading">Te has registrado Satisfactoriamente</h4>
-			<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
-		</div>
-		</body>
-		<?php
-    }else{
-        echo "<p>ERROR al insertar registro</p>";
-        echo "<p><a href='index.php'>Regresar</a></p>";
-    }
+	while ($fila = $resultado->fetch_assoc()) {
+		if ($nombre==$fila['usuario']){
+			?>
+            <body>
+                <div class="alert alert-success container" role="alert">
+                    <br><h4 class="alert-heading">No puedes tiener el mismo nombre que otro usuario.</h4>
+                    <br><h4 class="alert-heading">debes ingresar un nombre y una contraseña.</h4>
+                    <br><a href="registrar.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
+                </div>
+            </body>
+            <?php
+		} else {
+			
+		$sql = "INSERT INTO `usuarios` (`id`, `tipo_user`, `usuario`, `contra`) VALUES (NULL, 'cazador', '$nombre', '$contraseña_segura');";
+		$resultado2 = $mysqli->query($sql);
+		if($resultado2>0){
+			?>
+			<body>
+				<div class="alert alert-success container" role="alert">
+				<br><h4 class="alert-heading">Te has registrado Satisfactoriamente</h4>
+				<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
+			</div>
+			</body>
+			<?php
+		}else{
+			echo "<p>ERROR al insertar registro</p>";
+			echo "<p><a href='index.php'>Regresar</a></p>";
+		}
 
-
+	}
+}
 
 ?>
+
+	
 </body>
