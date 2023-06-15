@@ -28,6 +28,10 @@
             <a href="index.php"> <button type="button" class="btn btn-primary">¡Salir!</button></a>
         </form>
         </div>
+        <div>
+        <p class="card-text">¿Aún no eres miembro del gremio? ¡Registrate!</p>
+                <a href="registrar.php" class="btn btn-primary">¡Quiero unirme!</a>
+        </div>
         </main>
         <footer class="card text-center fixed-bottom" style="background-color: lightblue;">
         <section class="buttons">
