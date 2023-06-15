@@ -20,15 +20,17 @@
             <h2>Por favor, identifiquese</h2>
             <div class="form-group" class="log" >
                 <p><label>Nombre <input type="text" name="nombre" class="form-control"></label></p>
-                <small class="form-text text-muted">Recuerda que debe ser Administrador o Cazador</small>
             </div>
             <div class="form-group">
             <p><label>Contraeña <input type="password" name="contraseña" class="form-control"></label></p>
-            <small class="form-text text-muted">Recuerda que debe ser Cazador, solo si eres cazador pero la de Administrador no te la podemos decir</small>
             </div>
             <button type="submit" class="btn btn-warning">Entrar</button>
             <a href="index.php"> <button type="button" class="btn btn-primary">¡Salir!</button></a>
         </form>
+        </div>
+        <div>
+        <p class="card-text">¿Aún no eres miembro del gremio? ¡Registrate!</p>
+                <a href="registrar.php" class="btn btn-primary">¡Quiero unirme!</a>
         </div>
         </main>
         <footer class="card text-center fixed-bottom" style="background-color: lightblue;">

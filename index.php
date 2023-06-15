@@ -30,9 +30,10 @@
 <footer class="card text-center fixed-bottom" style="background-color: lightblue;">
         <div>
             <div class="card-body">
-                <h5>Pasalo bien</h5>
+            <h5>Pasalo bien</h5>
                 <p class="card-text">Aqui encontrarás todo tipo de datos y avistamiento de criaturas</p>
                 <a href="login.php" class="btn btn-primary">¡Vamos a entrar!</a>
+                
             </div>
         </div>
 </footer>

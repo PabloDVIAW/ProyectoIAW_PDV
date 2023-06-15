@@ -10,49 +10,31 @@ $contraseña=$_GET["contraseña"];
 // echo $contraseña;
 
 require "conexion.php";
-$verif= "SELECT contra FROM usuarios where nombre like '$nombre'";
+$verif= "SELECT contra FROM usuarios where usuario like '$nombre'";
 $resultado = $mysqli->query($verif);
-$verif2= "SELECT nombre FROM usuarios where contra like '$contraseña'";
+$verif2= "SELECT usuario FROM usuarios where contra like '$contraseña'";
 $resultado2 = $mysqli->query($verif2);
 $nom='';
-    while($fila = $resultado->fetch_assoc()){
-        $contra=$fila['contra'];
-    }
-
-    while($fila = $resultado2->fetch_assoc()){
-        $nom=$fila['nombre'];
-    }
-    if ($nombre==NULL){
-            ?>
-            <body>
-                <div class="alert alert-success container" role="alert">
-                    <br><h4 class="alert-heading">No, por ahi no es.</h4>
-                    <br><h4 class="alert-heading">debes ingresar un nombre y una contraseña.</h4>
-                    <br><a href="login.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
-                </div>
-            </body>
-            <?php
-    } else {
-        if ($nombre==$nom && $contraseña==$contra){
-            if($nom=="Administrador"){
-                if ($contraseña==$contra) {
-                    header('Location: menuadmin.php');
-                }
-            } else{
-                if ($contraseña==$contra) {
-                    header('Location: menu.php');
-                }
-            }
-        }else{
-            echo '<script language="javascript">alert("Datos de inicio incorrectos");</script>';
-            ?>
-		    <div class="alert alert-success container" role="alert">
-		    	<br><h4 class="alert-heading">Vaya, parece que hemos tenido un pequeño problema, pero no se preocupe que no es nada malo</h4>
-		    	<br><a href="login.php"><button type="button" class="btn btn-primary">Volver a intentarlo</button></a>
-            </div>
-            
-            <?php
-        }
-    }
     
-?>  
+    while($fila = $resultado->fetch_assoc()){
+        $hash = $fila['contra'];
+            echo $hash;
+
+            if (password_verify($contraseña, $hash)) {
+                $encontrado = true;
+                
+                header('Location: index.php');
+
+            } else {
+
+                ?>
+                    <body>
+                        <div class="alert alert-success container" role="alert">
+                            <br><h4 class="alert-heading">Contraseña incorrecta.</h4>
+                            <br><a href="login.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
+                        </div>
+                    </body>
+                <?php
+
+            }     
+    }  
