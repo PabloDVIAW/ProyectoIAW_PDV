@@ -15,8 +15,15 @@ $resultado = $mysqli->query($verif);
 $verif2= "SELECT nombre FROM usuarios where contra like '$contraseña'";
 $resultado2 = $mysqli->query($verif2);
 $nom='';
+    
     while($fila = $resultado->fetch_assoc()){
-        $contra=$fila['contra'];
+        $hash = $fila['contra'];
+            echo $hash;
+
+            if (password_verify($contra, $hash)) {
+                $encontrado = true;
+                
+        }  
     }
 
     while($fila = $resultado2->fetch_assoc()){
