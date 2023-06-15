@@ -24,7 +24,6 @@
 								<option value="Grutas_Lava">Grutas_Lava</option>
 							</select></label>
 							<input type="hidden" value="<?php $date ?>" name="fecha">
-							<!-- Registrar -->
 							<input type="submit" value="Guardar">
 						</form>
 	</div>
