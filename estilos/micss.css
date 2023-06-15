@@ -1,0 +1,39 @@
+  body {
+    background-image: url('../imagenes/frondogrem.jpg');
+  }
+  
+  @media (max-width: 1000px) {
+    body {
+      font-size: 50px;
+      padding: 10px;
+      align-content: center;
+      background-image: url('../imagenes/fondotablet.jpg');
+      flex-direction: row;
+    }
+
+    .box {
+      padding: 10px;
+      display: flex;
+    }
+    .menucab{
+        visibility: hidden;
+    }
+    
+  }
+
+  @media (max-width: 650px) {
+    body {
+      font-size: 50px;
+      padding: 10px;
+      align-items: center;
+      background-image: url('../imagenes/movilfondo.jpg');
+    }
+    .box {
+      padding: 1px;
+      display: flex;
+    }
+    .menucab{
+        visibility: hidden;
+    }
+    
+  }
