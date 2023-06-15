@@ -38,10 +38,10 @@
                             <br>
                             <label><p>Elige un arma</p>
 							<select name="arma" id="" >
-								<option value="Fuego">Espada</option>
-								<option selected value="Hielos">Espadalarga</option>
-								<option value="Dragon">Martillo</option>
-								<option value="Sangrado">Glaive</option>
+								<option selected value="Espada">Espada</option>
+								<option value="Espadalarga">Espadalarga</option>
+								<option value="Martillo">Martillo</option>
+								<option value="Glaive">Glaive</option>
 							</select>
                             </label>
 							<br>
