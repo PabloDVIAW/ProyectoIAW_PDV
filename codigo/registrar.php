@@ -14,7 +14,7 @@
 				<h1>Crea tu nuevo usuario</h1>
                 <br>
 						<form action="registrar2.php" method="GET">
-							<label for=""><p>Nombre de Usuario: <input type="text" name="nombre"></p></label>
+							<label for=""><p>Nombre de Usuario: <input type="text" name="nombre" require></p></label>
 							<br>
                             <label for=""><p>Contraseña: <input type="password" name="contra"></p></label>
                             <br>
