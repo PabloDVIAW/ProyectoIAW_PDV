@@ -28,7 +28,7 @@ $fortaleza = $_GET['fortaleza'];
 $desc=$_GET['descrip'];
 $arma = $_GET['arma'];
 $si='';
-echo $nombre, $debilidad, $fortaleza, $desc, $arma;
+
 while ($fila = $resultado->fetch_assoc()) {
     if ($fila['especie'] == $nombre) {
         $si = 1;

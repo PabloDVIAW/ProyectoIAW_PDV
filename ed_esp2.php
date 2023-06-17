@@ -23,13 +23,14 @@ $nombre=$_SESSION['usuario'];
 <body>
 	<?php
 	require('conexion.php');	
+    $id=$_GET['id'];
     $nombre=$_GET['nombre'];
     $debilidad = $_GET['debilidad'];
     $fortaleza = $_GET['fortaleza'];
     $definicion=$_GET['definicion'];
     $arma = $_GET['arma'];
 	 
-	$sql = "UPDATE tipos SET especie='$nombre', debilidad='$debilidad', fortaleza='$fortaleza', definicion='$definicion', arma='$arma' ";
+	$sql = "UPDATE tipos SET especie='$nombre', debilidad='$debilidad', fortaleza='$fortaleza', definicion='$definicion', arma='$arma' where id='$id'";
 
 	$resultado = $mysqli->query($sql);
 

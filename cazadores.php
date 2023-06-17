@@ -91,7 +91,9 @@ if ($tipoUser == "Administrador") {
 <?php
 }
 ?>
-<p><a href="index.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
+    <div class="container d-flex justify-content-between bd-highlight mb-3">
+        <p><a href="index.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
+    </div>
 </body>
 </div>
 </html>

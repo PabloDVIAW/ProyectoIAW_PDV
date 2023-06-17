@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$nombre=$_SESSION['usuario'];
 	require('conexion.php');
 	$sql="SELECT * FROM tipos";
 	$resultado=$mysqli->query($sql)
@@ -25,6 +26,10 @@
 	</div>
     </header>
     <main>
+
+	<?php
+	if ($nombre=='Administrador'){
+	?>
         <div class="container">
 		<h2>Estas son las especies registradas</h2>
         <table class="table">
@@ -59,7 +64,44 @@
 				</tbody>
 			</table>
 			</div>
+		<?php	
+		}else {
+			?>
 
+<div class="container">
+		<h2>Estas son las especies registradas</h2>
+        <table class="table">
+				<thead style="background-color: black; color: white;">
+					<tr>
+						<th scope="col">Especie</th>
+						<th scope="col">Debilidad</th>
+						<th scope="col">Fortaleza</th>
+						<th scope="col">Definicion</th>
+						<th scope="col">Arma</th>
+					</tr>
+				</thead>
+				<tbody style="background-color: grey;">
+					<?php
+
+						 while($fila = $resultado->fetch_assoc()){
+							
+							echo "<tr>";
+							echo "<td scope='row'>$fila[especie]</td>";
+							echo "<td scope='row'>$fila[debilidad]</td>";
+							echo "<td scope='row'>$fila[fortaleza]</td>";
+							echo "<td scope='row'>$fila[definicion]</td>";
+                            echo "<td scope='row'>$fila[arma]</td>";
+							echo "</tr>";
+						}
+						
+					?>
+				</tbody>
+			</table>
+			</div>
+
+			<?php
+		}
+		?>
 			<div  class="container d-flex justify-content-between bd-highlight mb-3">
 				
 				<p><a href="reg_esp.php" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>

@@ -30,10 +30,10 @@ while ($fila = $resultado->fetch_assoc()) {
 	<div class="container">
 				<h1>Elige una especie</h1>
                 <br>
-						<form action="reg_esp2.php" method="GET">
+						<form action="ed_esp2.php" method="GET">
 							<label for=""><p>Nombre de especie: <input type="text" name="nombre" value=" <?php echo $especie ?>"></p></label>
 							<br>
-                            <label for=""><p>Descripción: <input type="text" name="descrip" maxlength="50" value=" <?php echo $definicion ?>"></p></label>
+                            <label for=""><p>Descripción: <input type="text" name="definicion" maxlength="50" value=" <?php echo $definicion ?>"></p></label>
                             <br>
                             <label><p>Elige una debilidad porfavor</p>
 							<select name="debilidad" id="" >
@@ -63,6 +63,7 @@ while ($fila = $resultado->fetch_assoc()) {
                             </label>
 							<br>
 							<input type="submit" value="Modificar">
+                            <input type="hidden" value="<?php echo $id ?>" name="id">
 							<br>
 							<a href='especies.php' class='btn btn-primary'>Regresar</a>
 						</form>

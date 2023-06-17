@@ -28,9 +28,6 @@ $zona=$_GET['zona'];
 $especie=$_GET['especie'];
 $date = date('Y-m-d');
 
-echo $zona, $especie;
-echo $id_usuario;
-
 $sql = "INSERT INTO `avistamientos` (`fecha`, `zona`, `id_usuario`, `id_especie`) VALUES ('$date', '$zona', '$id_usuario', '$especie');";
 	$resultado = $mysqli->query($sql);
     if($resultado>0){
