@@ -1,16 +1,20 @@
 <?php
-
-	$id=$_GET['id'];
+	$idusu=$_GET['idusu'];
+	$id_avis=$_GET['id'];
 	require('conexion.php');
-	$sql="SELECT * FROM avistamientos where id like $id";
+	$sql="SELECT * FROM avistamientos where id_avis='$id_avis'";
 	$resultado=$mysqli->query($sql);
 
-	while($fila = $resultado->fetch_assoc()){
-		$nombre=$fila['nom_mon'];
-		$zona=$fila['zona'];
-		$fecha=$fila['fecha'];
+	while ($fila = $resultado->fetch_assoc()) {
+		$id_usuario = $fila['id_usuario'];
+		$id_especie = $fila['id_especie'];
+		$zona = $fila['zona'];
+		$fecha = $fila['fecha'];
 	}
-	
+
+	$sql="SELECT * FROM tipos";
+	$resultado2 = $mysqli->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +35,14 @@
 	<br>
 	<br>
 	<br>
-							<label><p>Nombre del monstruo: <input type="text" name="nombre" value="<?php echo $nombre ?>"></p></label>
+							<label for=""><p>Especie del monstruo:</p>
+							<select name="especie" id="">
+							<?php
+							while ($fila = $resultado2->fetch_assoc()) {
+								echo "<option value=", $fila['id'], ">", $fila['especie'], "</option>";
+							}
+							?>
+							</select>
 							<br>
 							<label><p>Elige un lugar para cambiar</p>
 							
@@ -78,7 +89,8 @@
                             echo "</select>";
                             }
 							?>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="id" value="<?php echo $id_avis ?>">
+							<input type="hidden" name="idusu" value="<?php echo $idusu ?>">
 							<input type="submit" value="Guardar">
 
 						</form>

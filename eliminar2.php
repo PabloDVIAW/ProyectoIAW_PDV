@@ -17,13 +17,13 @@
 	<?php
     require "conexion.php";
     $id=$_GET['id'];
-    $sql="DELETE FROM tipos where id=$id";
+    $sql="DELETE FROM avistamientos where id_avis=$id";
     $resultado=$mysqli->query($sql);
     if($resultado>0){
         ?>
 		<div class="alert alert-success container" role="alert">
-			<br><h4 class="alert-heading">Especie Eliminada</h4>
-			<a href='especies.php' class='btn btn-primary'>Regresar</a>
+			<br><h4 class="alert-heading">Avistamiento Eliminado</h4>
+			<a href='cazadores.php' class='btn btn-primary'>Regresar</a>
 		</div>
 		
 		<?php

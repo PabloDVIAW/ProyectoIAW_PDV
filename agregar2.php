@@ -1,5 +1,8 @@
 <?php
-$nombre=$_GET['nombre'];
+session_start();
+$nombre=$_SESSION['usuario'];
+$id_usuario=$_SESSION['id_usuario'];
+
 require('conexion.php');
 $sql="SELECT * FROM avistamientos";
 $resultado = $mysqli->query($sql);
@@ -21,20 +24,21 @@ $resultado = $mysqli->query($sql);
 	</head>
 <body>
     <?php
-
-// $nombre=$_GET['nombre'];
 $zona=$_GET['zona'];
 $especie=$_GET['especie'];
 $date = date('Y-m-d');
 
-$sql = "INSERT INTO `avistamientos` (`fecha`, `zona`, `usuario`, `especie`) VALUES ('$date', '$zona', '$nombre', '$especie');";
+echo $zona, $especie;
+echo $id_usuario;
+
+$sql = "INSERT INTO `avistamientos` (`fecha`, `zona`, `id_usuario`, `id_especie`) VALUES ('$date', '$zona', '$id_usuario', '$especie');";
 	$resultado = $mysqli->query($sql);
     if($resultado>0){
         ?>
 		<body>
 			<div class="alert alert-success container" role="alert">
 			<br><h4 class="alert-heading">REGISTRO AGREGADO</h4>
-			<a href='avistamientos.php' class='btn btn-primary'>Regresar</a>
+			<a href='cazadores.php' class='btn btn-primary'>Regresar</a>
 		</div>
 		</body>
 		<?php

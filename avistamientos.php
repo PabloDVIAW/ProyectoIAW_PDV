@@ -1,7 +1,12 @@
 <?php
-$nombre = $_GET['usuario'];
+session_start();
+$nombre=$_SESSION['usuario'];
+
+$id=$_GET['id'];
 require('conexion.php');
-$sql = "SELECT * FROM avistamientos WHERE usuario='$nombre'";
+// $sql = "SELECT * FROM avistamientos WHERE id_usuario='$id'";
+// $resultado = $mysqli->query($sql);
+$sql = "Select * from avistamientos, usuarios, tipos where avistamientos.id_usuario=usuarios.id and avistamientos.id_especie=tipos.id and id_usuario='$id'";
 $resultado = $mysqli->query($sql);
 ?>
 
@@ -44,25 +49,22 @@ $resultado = $mysqli->query($sql);
         <?php
 
         while($fila = $resultado->fetch_assoc()){
-            // $zona = $fila['zona'];
-            // $fecha = date('Y-m-d');
-            // $especie = $fila['especie'];
-            // $usuario = $fila['usuario'];
-
             echo "<tr>";
             echo "<td scope='row'>$fila[especie]</td>";
             echo "<td scope='row'>$fila[zona]</td>";
             echo "<td scope='row'>$fila[fecha]</td>";
             echo "<td scope='row'>$fila[usuario]</td>";
-            echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
-            echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
+            echo "<td scope='row'><a href='modificar.php?id=$fila[id_avis]&idusu=$fila[id_usuario]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
+            echo "<td scope='row'><a href='eliminar2.php?id=$fila[id_avis]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
             echo "</tr>";
         }
         ?>
         </tbody>
     </table>
-    <p><a href="agregar.php" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>
-    
+    <div class="container d-flex justify-content-between bd-highlight mb-3">
+    <p><a href="agregar.php?usuario=$fila[usuario]" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>
+    <p><a href="cazadores.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
+    </div>
 </div>
 </body>
 </html>

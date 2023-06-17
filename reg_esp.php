@@ -21,8 +21,8 @@
                             <label><p>Elige una debilidad porfavor</p>
 							<select name="debilidad" id="" >
 								<option selected value="Fuego">Fuego</option>
-								<option value="Hielos">Hielo</option>
-								<option value="Dragon">Agua</option>
+								<option value="Hielo">Hielo</option>
+								<option value="Agua">Agua</option>
 								<option value="Viento">Viento</option>
 							</select>
                             </label>
@@ -30,8 +30,8 @@
                             <label><p>Elige una fortaleza porfavor</p>
 							<select name="fortaleza" id="" >
 								<option selected value="Fuego">Fuego</option>
-								<option value="Hielos">Hielo</option>
-								<option value="Dragon">Agua</option>
+								<option value="Hielo">Hielo</option>
+								<option value="Agua">Agua</option>
 								<option value="Viento">Viento</option>
 							</select>
                             </label>

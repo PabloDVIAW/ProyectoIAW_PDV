@@ -7,7 +7,7 @@ $nombre=$_GET["nombre"];
 $contraseña=$_GET["contraseña"];
 
 require "conexion.php";
-$verif= "SELECT contra FROM usuarios where usuario like '$nombre'";
+$verif= "SELECT * FROM usuarios where usuario like '$nombre'";
 $resultado = $mysqli->query($verif);
 $verif2= "SELECT usuario FROM usuarios where contra like '$contraseña'";
 $resultado2 = $mysqli->query($verif2);
@@ -20,8 +20,11 @@ $nom='';
             if (password_verify($contraseña, $hash)) {
                 $encontrado = true;
                 
-                header('Location: index.php?nombre=' . urlencode($nombre));
-                
+                session_start();
+                $_SESSION["usuario"] = $nombre;
+                $_SESSION["id_usuario"] = $fila['id'];
+
+                header('Location: index.php');
             } else {
 
                 ?>

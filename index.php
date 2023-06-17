@@ -1,8 +1,12 @@
 <?php
 
 	require('conexion.php');
-	$sql="SELECT * FROM avistamientos";
-	$resultado=$mysqli->query($sql);
+	// $sql="SELECT * FROM avistamientos";
+	// $resultado=$mysqli->query($sql);
+    $sql = "Select * from avistamientos, usuarios, tipos where avistamientos.id_usuario=usuarios.id and avistamientos.id_especie=tipos.id";
+    $resultado = $mysqli->query($sql);
+    session_start();
+    $nombre=$_SESSION['usuario'];
 	
 ?>
 
@@ -20,9 +24,6 @@
 </head>
 <div class="box">
 <body>
-    <?php
-    $nombre=$_GET['nombre'];
-    ?>
     <div class="container" style="padding-top: 20px;">
         <h1>Hola, bienvenido al bestiario online.</h1>
         <p style="margin: 20px;">Esta es nuestra página informativa sobre monster hunter y todo su contenido, espero que te sea de gran ayuda</p>
@@ -35,29 +36,33 @@
                         <thead style="background-color: black; color: white;">
                             <tr>
                                 <th scope="col">Nombre del Monstruo</th>
-                                <th scope="col">zona</th>
                                 <th scope="col">fecha</th>
+                                <th scope="col">zona</th>
                                 <th scope="col">Cazador</th>
-                                <th></th>
-                                <th></th>
+
+
                             </tr>
                         </thead>
                         <tbody style="background-color: grey;">
                             <?php
                             while($fila = $resultado->fetch_assoc()){
-                                    $zona=$fila['zona'];
-                                    $fecha=$fila['fecha'];
-                                    $especie=$fila['especie'];
-                                    $usuario=$fila['usuario'];
-                                    echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
-                                    echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
-                            }
+                                    echo "<tr>";
+                                    // echo "<td scope='row'>$fila[id_especie]</td>";
+                                    // echo "<td scope='row'>$fila[fecha]</td>";
+                                    // echo "<td scope='row'>$fila[zona]</td>";
+                                    // echo "<td scope='row'>$fila[id_usuario]</td>";
+                                    echo "<td scope='row'>$fila[especie]</td>";
+                                    echo "<td scope='row'>$fila[fecha]</td>";
+                                    echo "<td scope='row'>$fila[zona]</td>";
+                                    echo "<td scope='row'>$fila[usuario]</td>";
+                                    echo "</tr>";
+                                }
                                 
                             ?>
                         </tbody>
                     </table>
                     <?php
-            echo $nombre;
+
     ?>
 			</div>
 </body>
@@ -65,8 +70,8 @@
         <div>
             <div class="card-body">
                 <a href="especies.php" class="btn btn-primary">¡Ver especies!</a>
-                <a href="cazadores.php?nombre=<?php echo $nombre; ?>" class="btn btn-primary">¡Ver cazadores!</a>
-                <a href="login.php" class="btn btn-primary">Cerrar sesion</a>
+                <a href="cazadores.php" class="btn btn-primary">¡Ver cazadores!</a>
+                <a href="cerrarsesion.php" class="btn btn-primary">Cerrar sesion</a>
                 
             </div>
         </div>

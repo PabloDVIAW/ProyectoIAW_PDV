@@ -64,7 +64,7 @@
 				
 				<p><a href="reg_esp.php" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>
 			
-				<p><a href="login.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
+				<p><a href="index.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
 				
 				
 			</div>

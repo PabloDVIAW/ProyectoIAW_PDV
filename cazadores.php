@@ -1,9 +1,10 @@
 <?php
-$nombre = $_GET['nombre'];
+session_start();
+$nombre=$_SESSION['usuario'];
+
 require('conexion.php');
 $sql = "SELECT * FROM usuarios";
 $resultado = $mysqli->query($sql);
-
 $rango = "SELECT tipo_user FROM usuarios WHERE usuario LIKE '$nombre'";
 $resultado2 = $mysqli->query($rango);
 $fila = $resultado2->fetch_assoc();
@@ -26,7 +27,7 @@ $tipoUser = $fila['tipo_user'];
 <body>
     <div class="container" style="padding-top: 20px;">
         <h1>Hola, bienvenido al bestiario online.</h1>
-        <p style="margin: 20px;">Esta es nuestra página informativa sobre monster hunter y todo su contenido, espero que te sea de gran ayuda</p>
+        <p>Esta es nuestra página informativa sobre monster hunter y todo su contenido, espero que te sea de gran ayuda</p>
     </div>
 </div>
 
@@ -52,7 +53,7 @@ if ($tipoUser == "Administrador") {
                     echo "<tr>";
                     echo "<td scope='row'>$fila[id]</td>";
                     echo "<td scope='row'>$fila[usuario]</td>";
-                    echo "<td scope='row'><a href='avistamientos.php?usuario=<?php echo $nombre; ?>'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
+                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
                     echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
                     echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
                     echo "</tr>";
@@ -80,7 +81,7 @@ if ($tipoUser == "Administrador") {
                     echo "<tr>";
                     echo "<td scope='row'>$fila[id]</td>";
                     echo "<td scope='row'>$fila[usuario]</td>";
-                    echo "<td scope='row'><a href='avistamientos.php?usuario=$fila[usuario]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
+                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
                     echo "</tr>";
                 }
                 ?>
@@ -90,9 +91,7 @@ if ($tipoUser == "Administrador") {
 <?php
 }
 ?>
-<?php
-            echo $nombre;
-    ?>
+<p><a href="index.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
 </body>
 </div>
 </html>

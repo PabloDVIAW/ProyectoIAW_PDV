@@ -22,14 +22,14 @@ $nombre=$_SESSION['usuario'];
 
 <body>
 	<?php
-	require 'conexion.php';
-	$idusu=$_GET['idusu'];
-    $zona=$_GET['zona'];
-    $id_especie=$_GET['especie'];
-    $fecha=date('Y-m-d');
-    $id=$_GET['id'];
+	require('conexion.php');	
+    $nombre=$_GET['nombre'];
+    $debilidad = $_GET['debilidad'];
+    $fortaleza = $_GET['fortaleza'];
+    $definicion=$_GET['definicion'];
+    $arma = $_GET['arma'];
 	 
-	$sql = "UPDATE avistamientos SET id_usuario='$idusu', id_especie='$id_especie', zona='$zona', fecha='$fecha' WHERE id_avis='$id'";
+	$sql = "UPDATE tipos SET especie='$nombre', debilidad='$debilidad', fortaleza='$fortaleza', definicion='$definicion', arma='$arma' ";
 
 	$resultado = $mysqli->query($sql);
 
@@ -38,7 +38,7 @@ $nombre=$_SESSION['usuario'];
 		<body>
 			<div class="alert alert-success container" role="alert">
 			<br><h4 class="alert-heading">REGISTRO MODIFICADO</h4>
-			<a href='avistamientos.php?id=<?php echo $idusu ?>' class='btn btn-primary'>Regresar</a>
+			<a href='especies.php?' class='btn btn-primary'>Regresar</a>
 		</div>
 		
 		</body>

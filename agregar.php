@@ -1,7 +1,10 @@
 <?php
-$nombre=$_GET['usuario'];
+session_start();
+$nombre=$_SESSION['usuario'];
+$id_usuario=$_SESSION['id_usuario'];
+echo $id_usuario;
 require('conexion.php');
-$sql="SELECT especie FROM tipos";
+$sql="SELECT * FROM tipos";
 $resultado = $mysqli->query($sql);
 ?>
 
@@ -24,7 +27,7 @@ $resultado = $mysqli->query($sql);
 							<select name="especie" id="">
 							<?php
 							while ($fila = $resultado->fetch_assoc()) {
-								echo "<option value=", $fila['especie'], ">", $fila['especie'], "</option>";
+								echo "<option value=", $fila['id'], ">", $fila['especie'], "</option>";
 							}
 							?>
 							</select>
@@ -37,7 +40,6 @@ $resultado = $mysqli->query($sql);
 								<option value="Llanos_Arenosos">Llanos_Arenosos</option>
 								<option value="Grutas_Lava">Grutas_Lava</option>
 							</select></label>
-							<input type="hidden" value="<?php $nombre ?>" name="nombre">
 							<input type="submit" value="Guardar">
 						</form>
 	</div>

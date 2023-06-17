@@ -17,13 +17,13 @@
 	<?php
     require "conexion.php";
     $id=$_GET['id'];
-    $sql="DELETE FROM avistamientos where ID=$id";
+    $sql="DELETE FROM usuarios where id=$id";
     $resultado=$mysqli->query($sql);
     if($resultado>0){
         ?>
 		<div class="alert alert-success container" role="alert">
-			<br><h4 class="alert-heading">REGISTRO Eliminado</h4>
-			<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
+			<br><h4 class="alert-heading">USUARIO Eliminado</h4>
+			<a href='cazadores.php' class='btn btn-primary'>Regresar</a>
 		</div>
 		
 		<?php
