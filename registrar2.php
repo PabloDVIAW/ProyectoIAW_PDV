@@ -21,19 +21,21 @@
 	</head>
 <body>
     <?php
-require('conexion.php');	
 $nombre=$_GET['nombre'];
 $contra=$_GET['contra'];
 $contraseña = $_GET['contra'];
     $contraseña_segura= password_hash($contra, PASSWORD_DEFAULT);
-
+$existe='';
 	while ($fila = $resultado->fetch_assoc()) {
-		if ($nombre==$fila['usuario']){
+        if ($fila['usuario'] == $nombre) {
+            $existe = 1;
+        }
+    }
+		if ($existe==1){
 			?>
             <body>
                 <div class="alert alert-success container" role="alert">
-                    <br><h4 class="alert-heading">No puedes tiener el mismo nombre que otro usuario.</h4>
-                    <br><h4 class="alert-heading">debes ingresar un nombre y una contraseña.</h4>
+                    <br><h4 class="alert-heading">No puedes tener el mismo nombre que otro usuario.</h4>
                     <br><a href="registrar.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
                 </div>
             </body>
@@ -57,7 +59,6 @@ $contraseña = $_GET['contra'];
 		}
 
 	}
-}
 
 ?>
 
