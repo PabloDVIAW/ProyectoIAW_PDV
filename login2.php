@@ -20,8 +20,8 @@ $nom='';
             if (password_verify($contraseña, $hash)) {
                 $encontrado = true;
                 
-                header('Location: index.php');
-
+                header('Location: index.php?nombre=' . urlencode($nombre));
+                
             } else {
 
                 ?>

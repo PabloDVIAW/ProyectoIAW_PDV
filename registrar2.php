@@ -47,7 +47,7 @@ $contraseña = $_GET['contra'];
 			<body>
 				<div class="alert alert-success container" role="alert">
 				<br><h4 class="alert-heading">Te has registrado Satisfactoriamente</h4>
-				<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
+				<a href='login.php' class='btn btn-primary'>Regresar</a>
 			</div>
 			</body>
 			<?php

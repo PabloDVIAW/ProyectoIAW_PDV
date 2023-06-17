@@ -20,7 +20,9 @@
 </head>
 <div class="box">
 <body>
-
+    <?php
+    $nombre=$_GET['nombre'];
+    ?>
     <div class="container" style="padding-top: 20px;">
         <h1>Hola, bienvenido al bestiario online.</h1>
         <p style="margin: 20px;">Esta es nuestra página informativa sobre monster hunter y todo su contenido, espero que te sea de gran ayuda</p>
@@ -63,7 +65,7 @@
         <div>
             <div class="card-body">
                 <a href="especies.php" class="btn btn-primary">¡Ver especies!</a>
-                <a href="cazadores.php" class="btn btn-primary">¡Ver cazadores!</a>
+                <a href="cazadores.php?nombre=<?php echo $nombre; ?>" class="btn btn-primary">¡Ver cazadores!</a>
                 <a href="login.php" class="btn btn-primary">Cerrar sesion</a>
                 
             </div>
