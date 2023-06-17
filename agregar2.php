@@ -1,3 +1,9 @@
+<?php
+$nombre=$_GET['nombre'];
+require('conexion.php');
+$sql="SELECT * FROM avistamientos";
+$resultado = $mysqli->query($sql);
+?>
 <!doctype html>
 <html lang="es">
 	<head>
@@ -16,19 +22,19 @@
 <body>
     <?php
 
-require 'conexion.php';
+// $nombre=$_GET['nombre'];
 $zona=$_GET['zona'];
-$nombre=$_GET['nombre'];
+$especie=$_GET['especie'];
 $date = date('Y-m-d');
 
-$sql = "INSERT INTO `avistamientos` (`id`, `nom_mon`, `zona`, `fecha`) VALUES (NULL, '$nombre', '$zona', '$date');";
+$sql = "INSERT INTO `avistamientos` (`fecha`, `zona`, `usuario`, `especie`) VALUES ('$date', '$zona', '$nombre', '$especie');";
 	$resultado = $mysqli->query($sql);
     if($resultado>0){
         ?>
 		<body>
 			<div class="alert alert-success container" role="alert">
 			<br><h4 class="alert-heading">REGISTRO AGREGADO</h4>
-			<a href='menuadmin.php' class='btn btn-primary'>Regresar</a>
+			<a href='avistamientos.php' class='btn btn-primary'>Regresar</a>
 		</div>
 		</body>
 		<?php

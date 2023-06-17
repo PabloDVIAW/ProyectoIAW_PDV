@@ -44,16 +44,16 @@ $resultado = $mysqli->query($sql);
         <?php
 
         while($fila = $resultado->fetch_assoc()){
-            $zona = $fila['zona'];
-            $fecha = date('Y-m-d');
-            $especie = $fila['especie'];
-            $usuario = $fila['usuario'];
+            // $zona = $fila['zona'];
+            // $fecha = date('Y-m-d');
+            // $especie = $fila['especie'];
+            // $usuario = $fila['usuario'];
 
             echo "<tr>";
-            echo "<td scope='row'>$especie</td>";
-            echo "<td scope='row'>$zona</td>";
-            echo "<td scope='row'>$fecha</td>";
-            echo "<td scope='row'>$usuario</td>";
+            echo "<td scope='row'>$fila[especie]</td>";
+            echo "<td scope='row'>$fila[zona]</td>";
+            echo "<td scope='row'>$fila[fecha]</td>";
+            echo "<td scope='row'>$fila[usuario]</td>";
             echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
             echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
             echo "</tr>";
@@ -61,6 +61,7 @@ $resultado = $mysqli->query($sql);
         ?>
         </tbody>
     </table>
+    <p><a href="agregar.php" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>
     
 </div>
 </body>

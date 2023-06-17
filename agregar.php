@@ -1,3 +1,10 @@
+<?php
+$nombre=$_GET['usuario'];
+require('conexion.php');
+$sql="SELECT especie FROM tipos";
+$resultado = $mysqli->query($sql);
+?>
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -13,7 +20,14 @@
 	<div class="container">
 				<h1>Lugares donde lo pudiste encontrar</h1>
 						<form action="agregar2.php" method="GET">
-							<label for=""><p>Nombre del monstruo: <input type="text" name="nombre"></p></label>
+							<label for=""><p>Especie del monstruo:</p>
+							<select name="especie" id="">
+							<?php
+							while ($fila = $resultado->fetch_assoc()) {
+								echo "<option value=", $fila['especie'], ">", $fila['especie'], "</option>";
+							}
+							?>
+							</select>
 							<br>
 							<label><p>Elige un lugar porfavor</p>
 							<select name="zona" id="" >
@@ -23,7 +37,7 @@
 								<option value="Llanos_Arenosos">Llanos_Arenosos</option>
 								<option value="Grutas_Lava">Grutas_Lava</option>
 							</select></label>
-							<input type="hidden" value="<?php $date ?>" name="fecha">
+							<input type="hidden" value="<?php $nombre ?>" name="nombre">
 							<input type="submit" value="Guardar">
 						</form>
 	</div>
