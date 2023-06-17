@@ -34,6 +34,7 @@ $tipoUser = $fila['tipo_user'];
 if ($tipoUser == "Administrador") {
 ?>
     <div class="container">
+        
         <h2>Estos son los cazadores del gremio</h2>
         <table class="table">
             <thead style="background-color: black; color: white;">
@@ -51,7 +52,7 @@ if ($tipoUser == "Administrador") {
                     echo "<tr>";
                     echo "<td scope='row'>$fila[id]</td>";
                     echo "<td scope='row'>$fila[usuario]</td>";
-                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[usuario]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
+                    echo "<td scope='row'><a href='avistamientos.php?usuario=<?php echo $nombre; ?>'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
                     echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
                     echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
                     echo "</tr>";
@@ -79,7 +80,7 @@ if ($tipoUser == "Administrador") {
                     echo "<tr>";
                     echo "<td scope='row'>$fila[id]</td>";
                     echo "<td scope='row'>$fila[usuario]</td>";
-                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
+                    echo "<td scope='row'><a href='avistamientos.php?usuario=$fila[usuario]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
                     echo "</tr>";
                 }
                 ?>
@@ -89,14 +90,9 @@ if ($tipoUser == "Administrador") {
 <?php
 }
 ?>
-
-<footer class="card text-center fixed-bottom" style="background-color: lightblue;">
-    <div class="card-body">
-        <a href="especies.php" class="btn btn-primary">¡Ver especies!</a>
-        <a href="cazadores.php?nombre=<?php echo $nombre; ?>" class="btn btn-primary">¡Ver cazadores!</a>
-        <a href="login.php" class="btn btn-primary">Cerrar sesión</a>
-    </div>
-</footer>
+<?php
+            echo $nombre;
+    ?>
 </body>
 </div>
 </html>

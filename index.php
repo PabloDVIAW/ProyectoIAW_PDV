@@ -52,13 +52,13 @@
                                     echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
                                     echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
                             }
-
-                            // Separar los fetch assoc para ir pillando 
-                            // por consultas diferentes los datos de cada tabla.
                                 
                             ?>
                         </tbody>
                     </table>
+                    <?php
+            echo $nombre;
+    ?>
 			</div>
 </body>
 <footer class="card text-center fixed-bottom" style="background-color: lightblue;">

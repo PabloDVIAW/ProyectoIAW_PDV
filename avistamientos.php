@@ -1,7 +1,7 @@
 <?php
 $nombre = $_GET['usuario'];
 require('conexion.php');
-$sql = "SELECT * FROM avistamientos WHERE usuario = $nombre";
+$sql = "SELECT * FROM avistamientos WHERE usuario='$nombre'";
 $resultado = $mysqli->query($sql);
 ?>
 
@@ -42,6 +42,7 @@ $resultado = $mysqli->query($sql);
         </thead>
         <tbody style="background-color: grey;">
         <?php
+
         while($fila = $resultado->fetch_assoc()){
             $zona = $fila['zona'];
             $fecha = date('Y-m-d');
@@ -60,6 +61,7 @@ $resultado = $mysqli->query($sql);
         ?>
         </tbody>
     </table>
+    
 </div>
 </body>
 </html>
