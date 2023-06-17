@@ -35,6 +35,8 @@
 						<th scope="col">Fortaleza</th>
 						<th scope="col">Definicion</th>
 						<th scope="col">Arma</th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody style="background-color: grey;">
@@ -64,7 +66,6 @@
 			
 				<p><a href="login.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
 				
-				<p><a href="tipos.php" name="btn"><button type="button" class="btn btn-primary">Ver la tabla informativa</button></a></p>
 				
 			</div>
     </main>

@@ -51,7 +51,7 @@ if ($tipoUser == "Administrador") {
                     echo "<tr>";
                     echo "<td scope='row'>$fila[id]</td>";
                     echo "<td scope='row'>$fila[usuario]</td>";
-                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
+                    echo "<td scope='row'><a href='avistamientos.php?id=$fila[usuario]'><button type='button' class='btn btn-primary'>Ver avistamientos</button></a></td>";
                     echo "<td scope='row'><a href='modificar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Editar</button></a></td>";
                     echo "<td scope='row'><a href='eliminar.php?id=$fila[id]'><button type='button' class='btn btn-primary'>Eliminar</button></a></td>";
                     echo "</tr>";

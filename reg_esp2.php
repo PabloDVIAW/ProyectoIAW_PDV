@@ -53,13 +53,13 @@ while ($fila = $resultado->fetch_assoc()) {
             <body>
                 <div class="alert alert-success container" role="alert">
                 <br><h4 class="alert-heading">Se ha agregado la especie</h4>
-                <a href='index.php' class='btn btn-primary'>Regresar</a>
+                <a href='especies.php' class='btn btn-primary'>Regresar</a>
             </div>
             </body>
             <?php
         }else{
             echo "<p>ERROR al insertar registro</p>";
-            echo "<p><a href='index.php'>Regresar</a></p>";
+            echo "<p><a href='especies.php'>Regresar</a></p>";
         }
 
     }
