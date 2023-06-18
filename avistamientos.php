@@ -62,7 +62,7 @@ $resultado = $mysqli->query($sql);
         </tbody>
     </table>
     <div class="container d-flex justify-content-between bd-highlight mb-3">
-    <p><a href="agregar.php?usuario=$fila[usuario]" name="btn"><button type="button" class="btn btn-primary">Agregar</button></a></p>
+    
     <p><a href="cazadores.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
     </div>
 </div>

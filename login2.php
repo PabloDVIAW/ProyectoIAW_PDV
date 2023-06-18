@@ -3,8 +3,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <?php
-$nombre=$_GET["nombre"];
-$contraseña=$_GET["contraseña"];
+$nombre=$_POST["nombre"];
+$contraseña=$_POST["contraseña"];
 
 require "conexion.php";
 $verif= "SELECT * FROM usuarios where usuario like '$nombre'";
@@ -24,17 +24,13 @@ $nom='';
                 $_SESSION["usuario"] = $nombre;
                 $_SESSION["id_usuario"] = $fila['id'];
 
-                header('Location: index.php');
-            } else {
-
-                ?>
+                header('Location: principal.php');
+            }   
+    }  
+    ?>
                     <body>
                         <div class="alert alert-success container" role="alert">
-                            <br><h4 class="alert-heading">Contraseña incorrecta.</h4>
-                            <br><a href="login.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
+                            <br><h4 class="alert-heading">LogIn incorrecta.</h4>
+                            <br><a href="index.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
                         </div>
                     </body>
-                <?php
-
-            }     
-    }  

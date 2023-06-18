@@ -35,13 +35,13 @@ $sql = "INSERT INTO `avistamientos` (`fecha`, `zona`, `id_usuario`, `id_especie`
 		<body>
 			<div class="alert alert-success container" role="alert">
 			<br><h4 class="alert-heading">REGISTRO AGREGADO</h4>
-			<a href='cazadores.php' class='btn btn-primary'>Regresar</a>
+			<a href='principal.php' class='btn btn-primary'>Regresar</a>
 		</div>
 		</body>
 		<?php
     }else{
         echo "<p>ERROR al insertar registro</p>";
-        echo "<p><a href='index.php'>Regresar</a></p>";
+        echo "<p><a href='principal.php'>Regresar</a></p>";
     }
 
 

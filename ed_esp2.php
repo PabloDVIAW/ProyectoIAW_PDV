@@ -46,7 +46,7 @@ $nombre=$_SESSION['usuario'];
 		<?php
 	} else {
 		echo "<p>ERROR al editar registro</p>";
-		echo "<p><a href='menuadmin.php'>Regresar</a></p>";
+		echo "<p><a href='principal.php'>Regresar</a></p>";
 	}
 
 	?>

@@ -92,7 +92,7 @@ if ($tipoUser == "Administrador") {
 }
 ?>
     <div class="container d-flex justify-content-between bd-highlight mb-3">
-        <p><a href="index.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
+        <p><a href="principal.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
     </div>
 </body>
 </div>
