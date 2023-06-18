@@ -1,7 +1,7 @@
 <?php
 session_start();
 $nombre=$_SESSION['usuario'];
-
+$id_usuario=$_SESSION["id_usuario"];
 $id=$_GET['id'];
 require('conexion.php');
 // $sql = "SELECT * FROM avistamientos WHERE id_usuario='$id'";
@@ -31,7 +31,9 @@ $resultado = $mysqli->query($sql);
         <p>Esta es nuestra página informativa sobre Monster Hunter y todo su contenido, espero que te sea de gran ayuda</p>
     </div>
 </div>
-
+<?php 
+if ($id_usuario==$id){
+?>
 <div class="container">
     <h2>Estos son los avistamientos registrados</h2>
     <table class="table">
@@ -61,7 +63,40 @@ $resultado = $mysqli->query($sql);
         ?>
         </tbody>
     </table>
-    <div class="container d-flex justify-content-between bd-highlight mb-3">
+    <?php
+    }else{
+     
+        ?>
+        <div class="container">
+            <h2>Estos son los avistamientos registrados</h2>
+            <table class="table">
+                <thead style="background-color: black; color: white;">
+                <tr>
+                    <th scope="col">Nombre del Monstruo</th>
+                    <th scope="col">Zona</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Cazador</th>
+                </tr>
+                </thead>
+                <tbody style="background-color: grey;">
+                <?php
+        
+                while($fila = $resultado->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td scope='row'>$fila[especie]</td>";
+                    echo "<td scope='row'>$fila[zona]</td>";
+                    echo "<td scope='row'>$fila[fecha]</td>";
+                    echo "<td scope='row'>$fila[usuario]</td>";
+                    echo "</tr>";
+                }
+                ?>
+                </tbody>
+            </table>
+            <?php
+
+    }    
+    ?>
+        <div class="container d-flex justify-content-between bd-highlight mb-3">
     
     <p><a href="cazadores.php" name="btn"><button type="button" class="btn btn-primary">Volver</button></a></p>
     </div>
