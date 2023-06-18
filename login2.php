@@ -30,7 +30,7 @@ $nom='';
     ?>
                     <body>
                         <div class="alert alert-success container" role="alert">
-                            <br><h4 class="alert-heading">LogIn incorrecta.</h4>
+                            <br><h4 class="alert-heading">LogIn incorrecto.</h4>
                             <br><a href="index.php"><button type="button" class="btn btn-primary">Esta vez lo hare bien</button></a>
                         </div>
                     </body>
