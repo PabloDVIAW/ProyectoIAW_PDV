@@ -27,8 +27,9 @@ $id=$_GET['id'];
     <label>Nuevo nombre de usuario: <input type="text" name="nombre" required></label>
 	<input type="hidden" name="id" value="<?php echo $id ?>">
     <br>
-    <input type="submit" value="Actualizar">
+    <input type="submit" value="Actualizar" type="button" class="btn btn-primary" style="margin-top: 20px;">
   </form>
+  <a href='cazadores.php?' class='btn btn-primary' style="margin-top: 20px;">Regresar</a>
 	</div>
   </body>
 

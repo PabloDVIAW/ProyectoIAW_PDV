@@ -25,7 +25,6 @@
             <p><label>Contraeña <input type="password" name="contraseña" class="form-control"></label></p>
             </div>
             <button type="submit" class="btn btn-warning">Entrar</button>
-            <a href="index.php"> <button type="button" class="btn btn-primary">¡Salir!</button></a>
         </form>
         </div>
         <div>

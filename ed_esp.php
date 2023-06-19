@@ -36,36 +36,96 @@ while ($fila = $resultado->fetch_assoc()) {
                             <label for=""><p>Descripción: <input type="text" name="definicion" maxlength="50" value=" <?php echo $definicion ?>"></p></label>
                             <br>
                             <label><p>Elige una debilidad porfavor</p>
-							<select name="debilidad" id="" >
-								<option selected value="Fuego">Fuego</option>
-								<option value="Hielo">Hielo</option>
-								<option value="Agua">Agua</option>
-								<option value="Viento">Viento</option>
-							</select>
+							<?php
+								echo "<select name='debilidad' value='$debilidad'>";
+								if($debilidad=='Fuego'){
+									echo "<option selected value='Fuego'>Fuego</option>";
+								} else {
+									echo "<option value='Fuego'>Fuego</option>";
+								}
+								if($debilidad=='Hielo'){
+									echo "<option selected value='Hielo'>Hielo</option>";
+								} else {
+									echo "<option value='Hielo'>Hielo</option>";
+								}
+								if($debilidad=='Agua'){
+									echo "<option selected value='Agua'>Agua</option>";
+								} else {
+									echo "<option value='Agua'>Agua</option>";
+								}
+								if($debilidad=='Viento'){
+									echo "<option selected value='Viento'>Viento</option>";
+								} else {
+									echo "<option value='Viento'>Viento</option>";
+								}
+								echo "</select>";
+							?>
                             </label>
                             <br>
                             <label><p>Elige una fortaleza porfavor</p>
-							<select name="fortaleza" id="" >
-								<option selected value="Fuego">Fuego</option>
-								<option value="Hielo">Hielo</option>
-								<option value="Agua">Agua</option>
-								<option value="Viento">Viento</option>
-							</select>
+							<?php
+
+								echo "<select name='fortaleza' value='$fortaleza'>";
+								if($fortaleza=='Fuego'){
+									echo "<option selected value='Fuego'>Fuego</option>";
+								} else {
+									echo "<option selected value='Fuego'>Fuego</option>";
+								}
+								if($fortaleza=='Hielo'){
+									echo "<option value='Hielo'>Hielo</option>";
+								} else {
+									echo "<option value='Hielo'>Hielo</option>";
+								}
+								if($fortaleza=='Agua'){
+									echo "<option value='Agua'>Agua</option>";
+								} else {
+									echo "<option value='Agua'>Agua</option>";
+								}
+								if($fortaleza=='Viento'){
+									echo "<option value='Viento'>Viento</option>";
+								} else {
+									echo "<option value='Viento'>Viento</option>";
+								}
+								echo "</select>";
+							?>
                             </label>
                             <br>
                             <label><p>Elige un arma</p>
-							<select name="arma" id="" >
-								<option selected value="Espada">Espada</option>
-								<option value="Espadalarga">Espadalarga</option>
-								<option value="Martillo">Martillo</option>
-								<option value="Glaive">Glaive</option>
-							</select>
+
+							<?php
+
+								echo "<select name='arma' value='$arma'>";
+								if($arma=='Espada'){
+									echo "<option selected value='Espada'>Espada</option>";
+								} else {
+									echo "<option value='Espada'>Espada</option>";
+								}
+								if($arma=='Espadalarga'){
+									echo "<option selected value='Espadalarga'>Espadalarga</option>";
+								} else {
+									echo "<option value='Espadalarga'>Espadalarga</option>";
+								}
+								if($arma=='Martillo'){
+									echo "<option selected value='Martillo'>Martillo</option>";
+								} else {
+									echo "<option value='Martillo'>Martillo</option>";
+								}
+								if($arma=='Glaive'){
+									echo "<option selected value='Glaive'>Glaive</option>";
+								} else {
+									echo "<option value='Glaive'>Glaive</option>";
+								}
+								echo "</select>";
+							?>
+
                             </label>
 							<br>
-							<input type="submit" value="Modificar">
+
+							<input type="submit" value="Modificar" class='btn btn-primary' style="margin-top: 20px;">
+
                             <input type="hidden" value="<?php echo $id ?>" name="id">
 							<br>
-							<a href='especies.php' class='btn btn-primary'>Regresar</a>
+							<a href='especies.php' class='btn btn-primary' style="margin-top: 20px;">Regresar</a>
 						</form>
 	</div>
 	</body>
